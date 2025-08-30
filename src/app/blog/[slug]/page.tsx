@@ -14,7 +14,9 @@ const options = {
 };
 
 export async function generateStaticParams() {
-  const files = fs.readdirSync(path.join("./src/app/blog"));
+  const files = fs
+    .readdirSync(path.join("./src/app/blog"))
+    .filter((filename) => filename.endsWith(".mdx"));
 
   return files.map((filename) => ({
     slug: filename.replace(".mdx", ""),
@@ -48,7 +50,7 @@ const mdxComponents = {
   ),
 
   img: (props: React.ComponentProps<"img">) => (
-    <img {...props} loading={props.loading ?? "lazy"} />
+    <img {...props} loading={props.loading ?? "lazy"} alt="Blog Image" />
   ),
 
   pre: (props: React.ComponentProps<"pre">) => (
