@@ -54,7 +54,7 @@ const mdxComponents = {
   ),
 
   pre: (props: React.ComponentProps<"pre">) => (
-    <div className="not-prose my-6 overflow-hidden rounded-xl border border-pink-500/20 bg-black/60">
+    <div className="not-prose my-6 overflow-hidden rounded-xl border border-pink-300/80 bg-black/60">
       <pre {...props} className="overflow-x-auto p-4 text-[0.9em]" />
     </div>
   ),
